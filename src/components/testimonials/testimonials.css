@@ -1,0 +1,101 @@
+.testimonials {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  font-size: 32px;
+  color: #8a4baf;
+  margin-bottom: 30px;
+}
+
+/* Swiper container */
+.swiper {
+  width: 90%;
+  padding: 20px;
+}
+
+/* Swiper Slide */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+/* Student Image */
+.student-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Message */
+.message {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* Student Info */
+.info .name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #8a4baf;
+  margin-bottom: 5px;
+}
+
+.info .position {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Swiper Pagination Dots */
+.swiper-pagination {
+  position: relative !important;
+  /* Ensures manual positioning */
+  margin-top: 20px;
+  /* Moves dots downward */
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  /* Adjust dot size */
+  height: 10px;
+  background-color: rgba(138, 75, 175, 0.7);
+  /* Purple with transparency */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #8a4baf;
+  /* Solid purple for active dot */
+}
+
+/* Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #8a4baf;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #6a11cb;
+}
