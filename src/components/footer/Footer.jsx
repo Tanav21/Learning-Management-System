@@ -41,10 +41,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="footer-bottom">
-        <p>&copy; 2024 Your E-Learning Platform. All rights reserved.</p>
-        <p>Made with ❤️ by <a href="https://yourportfolio.com">Sahil</a></p>
-      </div>
+
     </footer>
   );
 };
