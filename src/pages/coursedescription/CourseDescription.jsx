@@ -107,7 +107,18 @@ const CourseDescription = ({ user }) => {
                 </div>
               </div>
 
-              <p>{course.description}</p>
+              <div className="about">
+                <div className="about-content">
+                  <h2 className="heading">Course Description</h2>
+                  <p className="para">
+                    <div
+                      className="content"
+                      style={{ textAlign: "justify" }}
+                      dangerouslySetInnerHTML={{ __html: course.description }}
+                    ></div>
+                  </p>
+                </div>
+              </div>
 
               <p>Let's get started with course At ₹{course.price}</p>
 

@@ -12,7 +12,7 @@
 }
 
 .about-content {
-  max-width: 800px;
+  max-width: 90vw;
   /* text-align: center; */
   background: var(--card-background, white);
   padding: 30px;

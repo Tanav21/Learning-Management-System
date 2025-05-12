@@ -20,11 +20,20 @@ const CourseStudy = ({ user }) => {
     <>
       {course && (
         <div className="course-study-page">
-          <img src={`${server}/${course.image}`} alt="" width={350} />
+          <img src={`${server}/${course.image}`} alt="" width={250} />
           <h2>{course.title}</h2>
-          <h4>{course.description}</h4>
-          <h5>By - {course.createdBy}</h5>
-          <h5>Duration - {course.duration} weeks</h5>
+          <div className="about">
+                <div className="about-content">
+                  <h2 className="heading">Course Description</h2>
+                  <p className="para">
+                    <div
+                      className="content"
+                      style={{ textAlign: "justify" }}
+                      dangerouslySetInnerHTML={{ __html: course.description }}
+                    ></div>
+                  </p>
+                </div>
+              </div>
           <Link to={`/lectures/${course._id}`}>
             <h2>Lectures</h2>
           </Link>

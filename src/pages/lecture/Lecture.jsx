@@ -8,6 +8,8 @@ import toast from "react-hot-toast";
 import { TiTick } from "react-icons/ti";
 import { FaStar } from "react-icons/fa";
 import RatingModal from "../../components/Modal";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const Lecture = ({ user }) => {
   const [lectures, setLectures] = useState([]);
@@ -220,7 +222,6 @@ const Lecture = ({ user }) => {
           <div className="progress">
             Lecture completed - {completedLec} out of {lectLength} <br />
             <progress value={completed} max={100}></progress> {completed} %
-
           </div>
           <div className="lecture-page">
             <div className="left">
@@ -267,12 +268,12 @@ const Lecture = ({ user }) => {
                       onChange={(e) => setTitle(e.target.value)}
                       required
                     />
-                    <label htmlFor="text">Description</label>
-                    <input
-                      type="text"
+                    <label htmlFor="description">Description</label>
+                    <ReactQuill
+                      theme="snow"
                       value={description}
-                      onChange={(e) => setDescription(e.target.value)}
-                      required
+                      className="desc"
+                      onChange={(value) => setDescription(value)}
                     />
                     <input
                       type="file"
