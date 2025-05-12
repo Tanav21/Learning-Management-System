@@ -242,7 +242,17 @@ const Lecture = ({ user }) => {
                         onEnded={() => addProgress(lecture._id)}
                       ></video>
                       <h1>{lecture.title}</h1>
-                      <h3>{lecture.description}</h3>
+                       <div className="about1">
+                <div className="about-content1">
+                  <p className="para">
+                    <div
+                      className="content"
+                      style={{ textAlign: "justify" }}
+                      dangerouslySetInnerHTML={{ __html: lecture.description }}
+                    ></div>
+                  </p>
+                </div>
+              </div>
                       <div className="rating-section"></div>
                     </>
                   ) : (
