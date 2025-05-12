@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-const RatingModal = ({ handleRatingSubmit }) => {
+const RatingModal = ({ handleRatingSubmit,feed }) => {
   const [feedback, setFeedback] = useState([]);
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  console.log("feed",feed);
+
+  useEffect(() => {
+    if(feed==1||feed==2||feed==3||feed==4||feed==5){
+      setIsModalOpen(false);
+    }
+  }, [])
+  
+  if(!isModalOpen) {
+    return null;
+  }
   return (
     <div className="rating-modal">
       <div className="modal-content">

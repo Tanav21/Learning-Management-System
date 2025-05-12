@@ -143,6 +143,7 @@ const Lecture = ({ user }) => {
       setCompleted(data.courseProgressPercentage);
       setCompletedLec(data.completedLectures);
       setLectLength(data.allLectures);
+      setFeedback(data.rating)
       setProgress(data.progress);
 
       // 👉 Show rating modal only if progress hits 100% and not already shown
@@ -353,7 +354,7 @@ const Lecture = ({ user }) => {
 
           {/* Rating Modal */}
           {showRatingModal && (
-            <RatingModal handleRatingSubmit={handleRatingSubmit} />
+            <RatingModal handleRatingSubmit={handleRatingSubmit} feed={feedback} />
           )}
         </>
       )}
