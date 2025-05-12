@@ -7,6 +7,8 @@ import "./admincourses.css";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { server } from "../../main";
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css';  // Import Quill's CSS for styling
 
 const categories = [
   "Web Development",
@@ -44,6 +46,10 @@ const AdminCourses = ({ user }) => {
   };
 
   const { courses, fetchCourses } = CourseData();
+
+  const handleQuillChange = (value) => {
+    setDescription(value);
+  };
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -111,12 +117,12 @@ const AdminCourses = ({ user }) => {
                   required
                 />
 
-                <label htmlFor="text">Description</label>
-                <input
-                  type="text"
+                <label htmlFor="text" >Description</label>
+                <ReactQuill
+                  theme="snow"
+                  className="desc"
                   value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  required
+                  onChange={handleQuillChange}
                 />
 
                 <label htmlFor="text">Price</label>
