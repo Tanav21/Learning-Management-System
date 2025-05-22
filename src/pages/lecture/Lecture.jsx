@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./lecture.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../main";
 import Loading from "../../components/loading/Loading";
@@ -10,6 +10,7 @@ import { FaStar } from "react-icons/fa";
 import RatingModal from "../../components/Modal";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import LiveClass from "../../components/LiveClass";
 
 const Lecture = ({ user }) => {
   const [lectures, setLectures] = useState([]);
@@ -30,6 +31,8 @@ const Lecture = ({ user }) => {
   const [userRating, setUserRating] = useState(null);
   const [averageRating, setAverageRating] = useState(null);
   const [course, setCourse] = useState("");
+
+  const roomName = `live-class-${params.id}`;
 
   if (user && user.role !== "admin" && !user.subscription.includes(params.id))
     return navigate("/");
@@ -351,6 +354,12 @@ const Lecture = ({ user }) => {
               )}
             </div>
           </div>
+          <Link to={`/live-classroom/${roomName}`}>
+   <button className="join-live-btn">
+    🎥 Join Live Class
+  </button>
+</Link>
+
 
           {/* Rating Modal */}
           {showRatingModal && (

@@ -22,6 +22,7 @@ import AdminCourses from "./admin/Courses/AdminCourses";
 import AdminUsers from "./admin/Users/AdminUsers";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import ResetPassword from "./pages/auth/ResetPassword";
+import LiveClass from "./components/LiveClass";
 
 const App = () => {
   const { isAuth, user, loading } = UserData();
@@ -89,6 +90,8 @@ const App = () => {
               path="/admin/users"
               element={isAuth ? <AdminUsers user={user} /> : <Login />}
             />
+            <Route path="/live-classroom/:roomName" element={<LiveClass />} />
+
           </Routes>
           <Footer />
         </HashRouter>

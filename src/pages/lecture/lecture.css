@@ -148,3 +148,20 @@
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+.join-live-btn {
+  background-color: #7c3aed; /* Tailwind's bg-purple-600 */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 1rem; /* rounded-xl */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.join-live-btn:hover {
+  background-color: #6d28d9; /* Tailwind's hover:bg-purple-700 */
+  transform: scale(1.05);
+}
